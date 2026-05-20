@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сергей & Бек-Айым · 15 августа 2026</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Сергей & Бек-Айым · 15 августа 2026" />
+  <meta property="og:description" content="Мы с радостью приглашаем вас разделить с нами этот особенный день. Бишкек, ресторан «Тополёк»." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@400;600;700&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --milk:    #faf6f0;
+      --kraft:   #e8d9c0;
+      --lavender:#d9cee8;
+      --peach:   #f2c8b0;
+      --ochre:   #c9983a;
+      --gold:    #d4a843;
+      --text:    #5a4a3a;
+      --text-lt: #8a7a6a;
+      --ink:     #3d2e20;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--milk);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Rich warm gradient background ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(217,206,232,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 85%, rgba(242,200,176,.18) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(232,217,192,.10) 0%, transparent 70%);
+    }
+
+    /* ── Floating petal decorations ── */
+    .petal {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      animation: floatPetal linear infinite;
+    }
+    @keyframes floatPetal {
+      0%   { opacity: 0; transform: translateY(-60px) rotate(0deg); }
+      10%  { opacity: .35; }
+      90%  { opacity: .2; }
+      100% { opacity: 0; transform: translateY(110vh) rotate(540deg); }
+    }
+
+    /* ── Decorative corner flourishes ── */
+    .flourish {
+      position: absolute;
+      pointer-events: none;
+      opacity: .12;
+      z-index: 0;
+      font-size: 6rem;
+      color: var(--gold);
+      line-height: 1;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    /* ── Section ribbon label ── */
+    .section-label {
+      display: inline-block;
+      position: relative;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: '—';
+      margin: 0 .5rem;
+      opacity: .5;
+    }
+
+    /* ── Gold divider ornament ── */
+    .ornament {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--gold);
+      opacity: .5;
+      letter-spacing: .4em;
+      margin: 1rem 0;
+    }
+
+    /* ── Grain overlay ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: .35;
+    }
+
+    /* ── Watercolour hero background ── */
+    .watercolor-bg {
+      position: absolute; inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .watercolor-bg::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: -10%;
+      width: 70%; height: 80%;
+      background: radial-gradient(ellipse, rgba(217,206,232,.55) 0%, transparent 70%);
+      transform: rotate(-15deg);
+    }
+    .watercolor-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -10%; right: -5%;
+      width: 60%; height: 60%;
+      background: radial-gradient(ellipse, rgba(242,200,176,.5) 0%, transparent 68%);
+    }
+    .wc-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      mix-blend-mode: multiply;
+    }
+
+    /* ── Envelope pattern background ── */
+    .envelope-pattern {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .045;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='60' viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9983a' stroke-width='1'%3E%3Crect x='4' y='4' width='72' height='52' rx='3'/%3E%3Cpath d='M4 4 L40 34 L76 4'/%3E%3Cpath d='M4 56 L30 34'/%3E%3Cpath d='M76 56 L50 34'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 60px;
+    }
+
+    /* ── Sections ── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Fade-in on scroll ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    #hero {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Warm paper texture behind hero content */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(640px, 90vw);
+      height: 85%;
+      background: rgba(250,246,240,.55);
+      border-radius: 24px;
+      border: 1px solid rgba(201,152,58,.15);
+      box-shadow: 0 20px 80px rgba(90,74,58,.08);
+      pointer-events: none;
+      z-index: 0;
+    }
+    #hero > * { position: relative; z-index: 1; }
+
+    .hero-dear {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: var(--ochre);
+      letter-spacing: .12em;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-initials {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(5rem, 22vw, 13rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--ink);
+      position: relative;
+      margin-bottom: .2rem;
+    }
+    .hero-initials .ampersand {
+      color: var(--gold);
+      font-size: .75em;
+    }
+
+    /* gold brush stroke under initials */
+    .brush-line {
+      width: min(320px, 80vw);
+      height: 8px;
+      background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--ochre) 70%, transparent);
+      border-radius: 50%;
+      margin: .4rem auto 2rem;
+      opacity: .7;
+    }
+
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 5vw, 2.6rem);
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-date {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 4vw, 1.9rem);
+      color: var(--ochre);
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(.95rem, 2.5vw, 1.2rem);
+      color: var(--text-lt);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+    .hero-quote::before { content: '«'; }
+    .hero-quote::after  { content: '»'; }
+
+    /* Wax seal deco */
+    .seal {
+      width: 64px; height: 64px;
+      margin: 2.5rem auto 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, var(--peach), var(--ochre));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      color: white;
+      box-shadow: 0 4px 18px rgba(201,152,58,.35);
+      position: relative;
+    }
+    .seal::after {
+      content: '';
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      border: 2px dashed rgba(201,152,58,.4);
+    }
+
+    /* ══════════════════════════════
+       COUNTDOWN
+    ══════════════════════════════ */
+    #countdown {
+      padding: 5rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(232,217,192,.35) 30%, rgba(217,206,232,.2) 70%, transparent);
+    }
+
+    .section-label {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1rem;
+      letter-spacing: .2em;
+      color: var(--ochre);
+      margin-bottom: .5rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 3rem;
+    }
+
+    .timer-grid {
+      display: flex;
+      gap: clamp(.8rem, 3vw, 2.5rem);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .timer-box {
+      background: var(--milk);
+      border: 1px solid rgba(201,152,58,.3);
+      border-radius: 12px;
+      padding: 1.4rem clamp(1rem, 4vw, 2rem);
+      box-shadow: 0 4px 20px rgba(90,74,58,.08), inset 0 1px 0 rgba(255,255,255,.8);
+      min-width: 80px;
+    }
+    .timer-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 8vw, 4rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .timer-label {
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-top: .3rem;
+    }
+
+    /* ══════════════════════════════
+       CALENDAR / SCHEDULE
+    ══════════════════════════════ */
+    #schedule {
+      padding: 5rem 1.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+      opacity: .5;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem 0;
+    }
+
+    .tl-icon {
+      width: 56px; height: 56px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--milk);
+      border: 1px solid rgba(201,152,58,.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 3px 12px rgba(90,74,58,.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .tl-body { padding-top: .6rem; }
+    .tl-time {
+      font-family: 'Dancing Script', cursive;
+      color: var(--ochre);
+      font-size: 1.05rem;
+      margin-bottom: .1rem;
+    }
+    .tl-event {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--ink);
+    }
+    .tl-desc { font-size: .88rem; color: var(--text-lt); margin-top: .2rem; }
+
+    /* ══════════════════════════════
+       MAP
+    ══════════════════════════════ */
+    #map-section {
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .map-wrap {
+      max-width: 740px;
+      margin: 2.5rem auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(90,74,58,.15);
+      border: 1px solid rgba(201,152,58,.25);
+      position: relative;
+    }
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: none;
+    }
+
+    .address-copy {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 1.5rem;
+      padding: .7rem 1.4rem;
+      background: var(--milk);
+      border: 1px solid rgba(201,152,58,.4);
+      border-radius: 40px;
+      font-size: .9rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all .25s;
+      box-shadow: 0 2px 12px rgba(201,152,58,.15);
+    }
+    .address-copy:hover {
+      background: var(--gold);
+      color: white;
+      transform: scale(1.03);
+    }
+    .address-copy .icon { font-size: 1rem; }
+
+    /* ══════════════════════════════
+       DRESS CODE
+    ══════════════════════════════ */
+    #dresscode {
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .dc-card {
+      max-width: 520px;
+      margin: 2rem auto 0;
+      background: linear-gradient(135deg, rgba(217,206,232,.3), rgba(242,200,176,.3));
+      border: 1px solid rgba(201,152,58,.25);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 6px 30px rgba(90,74,58,.08);
+    }
+    .dc-icons { font-size: 2.5rem; margin-bottom: 1.2rem; }
+    .dc-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .dc-palette {
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .swatch {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    }
+
+    /* ══════════════════════════════
+       MUSIC PLAYER
+    ══════════════════════════════ */
+    #music {
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .player-card {
+      max-width: 400px;
+      margin: 2rem auto 0;
+      background: var(--ink);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 50px rgba(61,46,32,.35);
+      color: white;
+    }
+
+    .vinyl {
+      width: 110px; height: 110px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #222 18%, #1a1a1a 19%, #1a1a1a 44%, #2a2a2a 45%, #1a1a1a 46%, #1a1a1a 70%, #333 71%);
+      box-shadow: 0 0 0 4px rgba(201,152,58,.4), 0 8px 30px rgba(0,0,0,.5);
+      position: relative;
+      transition: transform .4s ease;
+    }
+    .vinyl.spinning {
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .vinyl::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .track-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: .06em;
+      margin-bottom: .3rem;
+      color: rgba(255,255,255,.9);
+    }
+    .track-artist {
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 1.3rem;
+    }
+
+    .player-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .play-btn {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      color: white;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 18px rgba(212,168,67,.5);
+    }
+    .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(212,168,67,.7); }
+
+    .player-note {
+      font-size: .75rem;
+      color: rgba(255,255,255,.35);
+      letter-spacing: .08em;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      background: rgba(255,255,255,.12);
+      border-radius: 4px;
+      height: 4px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 4px;
+      width: 0%;
+      transition: width .5s linear;
+    }
+
+    /* ══════════════════════════════
+       GALLERY
+    ══════════════════════════════ */
+    #gallery {
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 900px;
+      margin: 2rem auto 0;
+    }
+    /* Горизонтальное фото (5-е) на всю ширину */
+    .gallery-item:nth-child(5) {
+      grid-column: span 3;
+      max-height: 400px;
+    }
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(5) { grid-column: span 2; }
+    }
+
+    .gallery-placeholder {
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, #e8ddd0, #d5c9bc);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      color: var(--text-lt);
+      font-size: .8rem;
+      letter-spacing: .08em;
+      border: 1px dashed rgba(201,152,58,.35);
+    }
+    .gallery-placeholder .ph-icon { font-size: 1.6rem; opacity: .5; }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(90,74,58,.15);
+      border: 1px solid rgba(201,152,58,.2);
+      background: var(--kraft);
+    }
+	.only-phone {
+	  display: none;
+	}
+	@media (max-width: 900px) {
+      .only-phone {
+        display: block;
+	  }
+	}
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-caption {
+	  display: none;
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: .7rem .9rem;
+      background: linear-gradient(transparent, rgba(61,46,32,.75));
+      color: rgba(255,255,255,.92);
+      font-size: .78rem;
+      letter-spacing: .05em;
+      line-height: 1.4;
+      font-family: 'Jost', sans-serif;
+    }
+
+    /* ══════════════════════════════
+       WISHES
+    ══════════════════════════════ */
+    #wishes {
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .wish-form {
+      max-width: 560px;
+      margin: 2rem auto 0;
+    }
+    .wish-form input,
+    .wish-form textarea {
+      width: 100%;
+      background: var(--milk);
+      border: 1px solid rgba(201,152,58,.35);
+      border-radius: 10px;
+      padding: .85rem 1.1rem;
+      font-family: 'Jost', sans-serif;
+      font-size: .95rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color .25s, box-shadow .25s;
+      margin-bottom: 1rem;
+    }
+    .wish-form input::placeholder,
+    .wish-form textarea::placeholder { color: var(--text-lt); }
+    .wish-form input:focus,
+    .wish-form textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212,168,67,.15);
+    }
+    .wish-form textarea { height: 130px; resize: vertical; }
+
+    /* ══════════════════════════════
+       RSVP
+    ══════════════════════════════ */
+    #rsvp {
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .rsvp-wrap {
+      max-width: 540px;
+      margin: 2rem auto 0;
+    }
+
+    /* ══════════════════════════════
+       SHARED BUTTON STYLE
+    ══════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: 40px;
+      font-family: 'Jost', sans-serif;
+      font-size: .9rem;
+      letter-spacing: .1em;
+      cursor: pointer;
+      border: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: rotate(-1deg) scale(1.04); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--ochre), var(--gold));
+      color: white;
+      box-shadow: 0 4px 20px rgba(201,152,58,.35);
+    }
+    .btn-primary:hover { box-shadow: 0 6px 28px rgba(201,152,58,.55); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ochre);
+      border: 1.5px solid var(--ochre);
+    }
+    .btn-outline:hover { background: var(--ochre); color: white; }
+
+    .btn-tg {
+      background: linear-gradient(135deg, #2CA5E0, #1c8ec5);
+      color: white;
+      box-shadow: 0 4px 20px rgba(44,165,224,.3);
+    }
+    .btn-tg:hover { box-shadow: 0 6px 28px rgba(44,165,224,.5); }
+
+    /* ══════════════════════════════
+       DIVIDER
+    ══════════════════════════════ */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 1.5rem auto;
+      color: var(--gold);
+      opacity: .6;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    footer {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(201,152,58,.2);
+      position: relative;
+      z-index: 1;
+    }
+    footer .foot-names {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: var(--ochre);
+    }
+    footer .foot-tagline {
+      font-size: .8rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-top: .5rem;
+    }
+
+    /* ══════════════════════════════
+       TOAST
+    ══════════════════════════════ */
+    .toast {
+      position: fixed;
+      bottom: 2rem; left: 50%;
+      transform: translateX(-50%) translateY(120%);
+      background: var(--ink);
+      color: white;
+      padding: .75rem 1.5rem;
+      border-radius: 40px;
+      font-size: .85rem;
+      letter-spacing: .08em;
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+      z-index: 10000;
+      white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 480px) {
+      .timer-box { min-width: 60px; padding: 1rem .8rem; }
+      .timeline::before { left: 22px; }
+      .tl-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating petals -->
+<div class="petal" style="left:8%;font-size:1rem;animation-duration:14s;animation-delay:0s">🌸</div>
+<div class="petal" style="left:22%;font-size:.7rem;animation-duration:18s;animation-delay:3s">✿</div>
+<div class="petal" style="left:40%;font-size:.9rem;animation-duration:12s;animation-delay:6s">🌿</div>
+<div class="petal" style="left:60%;font-size:.8rem;animation-duration:16s;animation-delay:1s">🌸</div>
+<div class="petal" style="left:75%;font-size:1rem;animation-duration:20s;animation-delay:8s">✿</div>
+<div class="petal" style="left:90%;font-size:.7rem;animation-duration:13s;animation-delay:4s">🌿</div>
+
+<!-- Envelope pattern background -->
+<div class="envelope-pattern"></div>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="watercolor-bg">
+    <div class="wc-blob" style="width:400px;height:350px;top:5%;left:-8%;background:rgba(217,206,232,.45)"></div>
+    <div class="wc-blob" style="width:300px;height:280px;bottom:10%;right:-4%;background:rgba(242,200,176,.4)"></div>
+    <div class="wc-blob" style="width:200px;height:200px;top:55%;left:55%;background:rgba(232,217,192,.35)"></div>
+  </div>
+
+  <p class="hero-dear fade-in">Дорогие гости...</p>
+
+  <div class="hero-initials fade-in" style="transition-delay:.15s">
+    S <span class="ampersand">&</span> B
+  </div>
+  <div class="brush-line fade-in" style="transition-delay:.2s"></div>
+
+  <p class="hero-names fade-in" style="transition-delay:.25s">Сергей &amp; Бек-Айым</p>
+  <p class="hero-date fade-in" style="transition-delay:.3s">15 августа 2026 года</p>
+  <p class="hero-date fade-in" style="transition-delay:.3s">Время 18:00</p>
+
+  <p class="hero-quote fade-in" style="transition-delay:.4s">
+    Любовь — это не то, что находишь. Любовь — это то, что ты строишь вместе.
+  </p>
+
+  <div class="seal fade-in" style="transition-delay:.5s">S&B</div>
+</section>
+
+<!-- ══════════ COUNTDOWN ══════════ -->
+<section id="countdown">
+  <p class="section-label fade-in">До особого дня</p>
+  <h2 class="section-title fade-in">Осталось совсем немного...</h2>
+  <div class="timer-grid fade-in">
+    <div class="timer-box">
+      <div class="timer-num" id="cd-days">--</div>
+      <div class="timer-label">дней</div>
+    </div>
+    <div class="timer-box">
+      <div class="timer-num" id="cd-hours">--</div>
+      <div class="timer-label">часов</div>
+    </div>
+    <div class="timer-box">
+      <div class="timer-num" id="cd-mins">--</div>
+      <div class="timer-label">минут</div>
+    </div>
+    <div class="timer-box">
+      <div class="timer-num" id="cd-secs">--</div>
+      <div class="timer-label">секунд</div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament">✦ ✿ ✦</div>
+<section id="map-section">
+  <p class="section-label fade-in">Где нас найти</p>
+  <h2 class="section-title fade-in">Ресторан «Тополёк»</h2>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=317ae3b0-ed89-4e80-9fed-602416a74e63" type="text/javascript"></script>
+
+  <div class="map-wrap fade-in">
+    <div id="map" style="width: 100%; height: 100%; min-height: 350px;"></div>
+  </div>
+
+  <script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        // Координаты ресторана Тополёк (Бишкек, Элебесова 183/1)
+        var coords = [42.916690, 74.612889]; 
+        
+        var myMap = new ymaps.Map("map", {
+            center: coords,
+            zoom: 16,
+            controls: ['zoomControl', 'fullscreenControl']
+        });
+
+        var myPlacemark = new ymaps.Placemark(coords, {
+            hintContent: 'Ресторан «Тополёк»',
+            balloonContent: 'Ждем вас здесь!'
+        }, {
+            preset: 'islands#goldFoodIcon' // Золотая иконка еды под стиль свадьбы
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+        
+        // Отключаем зум колесиком мыши (чтобы не мешало скроллить страницу)
+        myMap.behaviors.disable('scrollZoom');
+    }
+  </script>
+
+  <div class="fade-in" style="margin-top:1rem">
+    <a class="btn btn-outline"
+       href="https://go.2gis.com/b8Zgq"
+       target="_blank" rel="noopener"
+       style="margin-right:.6rem">
+      🗺 Открыть в 2GIS
+    </a>
+  </div>
+
+  <button class="address-copy fade-in" onclick="copyAddress()" title="Скопировать адрес">
+    <span class="icon">📍</span>
+    <span id="addr-text">Бишкек, ул. Элебесова 183/1 · Тополёк</span>
+    <span>📋</span>
+  </button>
+</section>
+
+<div class="ornament">✦ ✿ ✦</div>
+<div class="gallery-grid fade-in">
+	<div class="gallery-item">
+	  <img src="https://i.ibb.co/ZzB9YY21/IMG-7615.jpg" alt="В кафе — наши первые серьёзные разговоры ☕" loading="lazy" />
+	  <p class="gallery-caption">В кафе — наши первые серьёзные разговоры ☕</p>
+	</div>
+	<div class="gallery-item">
+	  <img src="https://i.ibb.co/ZRgpnhTS/20260104-140535.jpg" loading="lazy" />
+	  <p class="gallery-caption">Зимние горы — наша первая поездка вместе 🏔</p>
+	</div>
+	<div class="gallery-item">
+	  <img src="https://i.ibb.co/hJSVd8CY/IMG-6201.jpg" alt="Сердце из рук на снегу ❤️" loading="lazy" />
+	  <p class="gallery-caption">Сердце из рук на снегу ❤️</p>
+	  <img src="Сердце из рук на снегу" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto 20px;;">
+	</div>
+	<div class="gallery-item only-phone">
+	  <img src="https://i.ibb.co/zH0n6JwV/IMG-6164.jpg" alt="Предложение" loading="lazy" />
+	  <p class="gallery-caption">Предложение</p>
+	</div>
+	<div class="gallery-item">
+	  <img src="https://i.ibb.co/ZRgpnhTS/20260104-140535.jpg" alt="Вместе в горах — там, где мы счастливы 🌄" loading="lazy" />
+	  <p class="gallery-caption">Вместе в горах — там, где мы счастливы 🌄</p>
+	</div>
+</div>
+
+
+<div class="ornament">✦ ✿ ✦</div>
+<!-- ══════════ WISHES ══════════ -->
+<section id="wishes">
+  <p class="section-label fade-in">Напишите нам</p>
+  <h2 class="section-title fade-in">Книга пожеланий</h2>
+
+  <div class="wish-form fade-in">
+    <input type="text" id="wish-name" placeholder="Ваше имя" />
+    <textarea id="wish-text" placeholder="Напишите тёплые слова для молодожёнов..."></textarea>
+
+    <!--
+      КНИГА ПОЖЕЛАНИЙ — ВАРИАНТ A (EMAIL через EmailJS)
+      =================================================
+      Для активации:
+      1. Зарегистрируйтесь на https://www.emailjs.com
+      2. Создайте сервис (Gmail / Outlook) → скопируйте SERVICE_ID
+      3. Создайте шаблон письма → скопируйте TEMPLATE_ID
+      4. В шапке подключите: <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+      5. В начале <script> добавьте: emailjs.init("ВАШ_PUBLIC_KEY");
+      6. Замените функцию sendWish на вызов emailjs.send(...)
+    -->
+    <!-- АКТИВЕН ВАРИАНТ Б (Telegram) — Email закомментирован -->
+
+    <!--
+    === ВАРИАНТ A (Email / EmailJS) — ЗАКОММЕНТИРОВАН ===
+    <button class="btn btn-primary" onclick="sendWishEmail()">
+      ✉️ &nbsp; Отправить на почту
+    </button>
+
+    <script>
+    function sendWishEmail() {
+      const name = document.getElementById('wish-name').value.trim();
+      const text = document.getElementById('wish-text').value.trim();
+      if (!name || !text) { alert('Пожалуйста, заполните имя и пожелание.'); return; }
+      // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', { from_name: name, message: text })
+      //   .then(() => alert('Спасибо! Ваше пожелание отправлено 💌'))
+      //   .catch(() => alert('Ошибка. Попробуйте ещё раз.'));
+      alert('Демо-режим: пожелание получено! (' + name + ')');
+    }
+    </script>
+    -->
+
+    <!-- === ВАРИАНТ Б (Telegram) — АКТИВЕН === -->
+    <!--
+      Активация Telegram:
+      1. Напишите @BotFather → /newbot → получите BOT_TOKEN
+      2. Добавьте бота в личку или группу и напишите /start
+      3. Узнайте CHAT_ID через https://api.telegram.org/bot<BOT_TOKEN>/getUpdates
+      4. Вставьте BOT_TOKEN и CHAT_ID ниже
+    -->
+    <button class="btn btn-tg" onclick="sendWishTelegram()">
+      ✈️ &nbsp; Отправить через Telegram
+    </button>
+
+    <p style="font-size:.78rem;color:var(--text-lt);margin-top:.8rem;letter-spacing:.06em">
+      Ваше пожелание получат молодожёны 💌
+    </p>
+  </div>
+</section>
+
+
+<div class="ornament">✦ ✿ ✦</div>
+<section id="rsvp-section" style="padding: 40px 20px; text-align: center; background-color: var(--milk);">
+    <h2 class="section-title">Детей не звали</h2>
+    <h2 class="section-title">Подтвердите участие</h2>
+    <p style="margin-bottom: 20px;">Пожалуйста, заполните форму ниже до 1 августа</p>
+    
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqIuUnFbpPozRu4zQUYaTtBdYqbsXy-bpDGutLur55beg_DA/viewform?usp=dialog" 
+            width="100%" 
+            height="1000" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">Загрузка…</iframe>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <p class="foot-names">Сергей &amp; Бек-Айым</p>
+  <p class="foot-tagline">15 августа 2026 · Бишкек · Ресторан «Тополёк»</p>
+  <p style="font-size:.72rem;color:var(--text-lt);margin-top:1rem;letter-spacing:.08em">
+    Сделано с любовью 🌿
+  </p>
+  <div style="margin-top:1.5rem;opacity:.35;font-size:1.6rem;letter-spacing:.5rem;color:var(--gold)">✦ ✿ ✦</div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ── Countdown ── */
+  const weddingDate = new Date('2026-08-15T18:00:00');
+  function updateTimer() {
+    const now = new Date();
+    const diff = weddingDate - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent  = '0';
+      document.getElementById('cd-hours').textContent = '0';
+      document.getElementById('cd-mins').textContent  = '0';
+      document.getElementById('cd-secs').textContent  = '0';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
+  /* ── Fade-in on scroll ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* ── Copy address ── */
+  function copyAddress() {
+    const addr = 'Бишкек, ул. Элебесова 183/1, ресторан Тополёк';
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(addr).then(() => showToast('Адрес скопирован 📋'));
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = addr;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Адрес скопирован 📋');
+    }
+  }
+
+  /* ── Toast ── */
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  /* ── Wishes — Telegram ── */
+  function sendWishTelegram() {
+    const name = document.getElementById('wish-name').value.trim();
+    const text = document.getElementById('wish-text').value.trim();
+    if (!name || !text) {
+      showToast('Пожалуйста, заполните имя и пожелание');
+      return;
+    }
+    /*
+      TELEGRAM BOT (автоматическая отправка):
+      =========================================
+      1. Получите BOT_TOKEN у @BotFather
+      2. Узнайте CHAT_ID (напишите боту /start, откройте:
+         https://api.telegram.org/bot<BOT_TOKEN>/getUpdates)
+      3. Раскомментируйте блок ниже и вставьте токен и chat_id
+
+      const BOT_TOKEN = 'ВАШ_BOT_TOKEN';
+      const CHAT_ID   = 'ВАШ_CHAT_ID';
+      const message   = `💌 Пожелание от ${name}:\n\n${text}`;
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+      })
+      .then(r => r.json())
+      .then(d => {
+        if (d.ok) showToast('Пожелание отправлено! 💌');
+        else showToast('Ошибка отправки. Попробуйте ещё раз.');
+      })
+      .catch(() => showToast('Ошибка сети.'));
+      return;
+    */
+
+    // Открываем Telegram с предзаполненным сообщением (без бот-токена):
+    const msg = encodeURIComponent('💌 Пожелание от ' + name + ':\n\n' + text);
+    window.open('https://t.me/poseal_7?text=' + msg, '_blank');
+    showToast('Открываем Telegram... 💌');
+    document.getElementById('wish-name').value = '';
+    document.getElementById('wish-text').value = '';
+  }
+
+  /* ── RSVP Decline ── */
+  function rsvpDecline() {
+    showToast('Жаль, что не получится 🌸 Спасибо, что сообщили!');
+  }
+</script>
+</body>
+</html>
