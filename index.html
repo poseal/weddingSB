@@ -724,11 +724,69 @@
     .btn:hover { transform: rotate(-1deg) scale(1.04); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--ochre), var(--gold));
-      color: white;
-      box-shadow: 0 4px 20px rgba(201,152,58,.35);
-    }
-    .btn-primary:hover { box-shadow: 0 6px 28px rgba(201,152,58,.55); }
+  background: linear-gradient(135deg, var(--ochre), var(--gold));
+  color: white;
+  box-shadow: 0 4px 20px rgba(201,152,58,.35);
+  
+  /* ПОДКЛЮЧАЕМ ПАССИВНЫЙ ЭФФЕКТ: */
+  /* Название анимации: pulse, время круга: 2.5 секунды, крутится бесконечно (infinite) */
+  animation: pulse 2.5s infinite ease-in-out; 
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--ochre), var(--gold));
+  color: white;
+  box-shadow: 0 4px 20px rgba(201,152,58,.35);
+  
+  /* Включаем пассивный эффект дыхания */
+  animation: weddingPulse 3s infinite ease-in-out; 
+  
+  /* Подготовка для эффекта блика */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Создаем сам блик внутри кнопки */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  /* Блик будет пробегать раз в 4 секунды */
+  animation: weddingFlare 4s infinite linear;
+}
+
+/* Когда гость наводит на кнопку мышку, анимация замирает, чтобы кнопка послушно нажималась */
+.btn-primary:hover { 
+  box-shadow: 0 6px 28px rgba(201,152,58,.55); 
+  animation-play-state: paused; 
+}
+
+
+/* НАСТРОЙКА ЭФФЕКТОВ (KEYFRAMES) */
+
+/* 1. Эффект дыхания: кнопка увеличивается всего на 3% и мягко возвращается обратно */
+@keyframes weddingPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(201,152,58,.35);
+  }
+  50% {
+    transform: scale(1.03); 
+    box-shadow: 0 6px 25px rgba(201,152,58,.50); 
+  }
+}
+
+/* 2. Эффект блика: он быстро пробегает за 1 секунду, а остальные 3 секунды "отдыхает" */
+@keyframes weddingFlare {
+  0% { left: -150%; }
+  40% { left: 150%; }   /* Быстро пролетел слева направо */
+  100% { left: 150%; }  /* Пауза в движении */
+}
+}
 
     .btn-outline {
       background: transparent;
@@ -851,8 +909,13 @@
     Любовь — это не то, что находишь. Любовь — это то, что ты строишь вместе.
   </p>
 
-  <div class="seal fade-in" style="transition-delay:.5s">S&B</div>
-</section>
+
+
+<a class="btn btn-primary" href="#rsvp-section" onclick="document.getElementById('rsvp-section').scrollIntoView({ behavior: 'smooth', block: 'start' }); event.preventDefault();" aria-label="Перейти к подтверждению присутствия" style="margin-top: 30px; display: inline-block;">
+  Подтвердить присутствие
+  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+</a>
+
 
 <!-- ══════════ COUNTDOWN ══════════ -->
 <section id="countdown">
@@ -932,6 +995,194 @@
 </section>
 
 <div class="ornament">✦ ✿ ✦</div>
+<!-- ══════════ MUSIC ══════════ -->
+<section id="music">
+  <p class="section-label fade-in">Немного атмосферы</p>
+  <h2 class="section-title fade-in">Музыка для настроения</h2>
+
+  <style>
+    .vinyl-wrapper {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .vinyl.spinning {
+      animation: spin 4s linear infinite, pulseGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 4px rgba(201, 152, 58, 0.4), 0 8px 30px rgba(0, 0, 0, 0.5); }
+      100% { box-shadow: 0 0 20px 8px rgba(212, 168, 67, 0.7), 0 8px 30px rgba(0, 0, 0, 0.5); }
+    }
+
+    /* Стили для летающих нот и сердечек */
+    .music-particle {
+      position: absolute;
+      pointer-events: none;
+      font-size: 1.2rem;
+      color: var(--gold);
+      opacity: 0;
+      z-index: 10;
+      animation: flyUp 2.5s ease-out forwards;
+    }
+
+    @keyframes flyUp {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+      }
+      15% {
+        opacity: 0.8;
+      }
+      85% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translate(var(--x-end), var(--y-end)) scale(1.2) rotate(var(--rot-end));
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+      }
+    }
+  </style>
+
+  <div class="player-card fade-in">
+    <div class="vinyl-wrapper" id="player-wrapper">
+      <div class="vinyl" id="vinyl-disc"></div>
+    </div>
+
+    <p class="track-name">Наша песня</p>
+    <p class="track-artist">♪ Специально для этого дня</p>
+
+    <div class="progress-wrap" id="progress-bar" onclick="seekAudio(event)">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div class="player-controls">
+      <button class="play-btn" id="play-btn" onclick="togglePlay()" aria-label="Воспроизвести / Пауза">
+        ▶
+      </button>
+    </div>
+
+    <p class="player-note" id="player-note">Нажмите ▶ для воспроизведения</p>
+
+    <audio id="audio" preload="metadata" src="https://www.image2url.com/r2/default/audio/1779310979201-9cb6edd3-4e75-4b78-8fe5-aeb72e176708.mp3" loop></audio>
+
+    <script>
+      const player = document.getElementById('audio');
+      const playBtn = document.getElementById('play-btn');
+      const vinyl = document.getElementById('vinyl-disc');
+      const progressFill = document.getElementById('progress-fill');
+      const progressBar = document.getElementById('progress-bar');
+      const playerNote = document.getElementById('player-note');
+      const wrapper = document.getElementById('player-wrapper');
+
+      let particleInterval = null;
+      player.volume = 0.1;
+
+      function togglePlay() {
+        if (player.paused) {
+          player.play().then(() => updateUI(true)).catch(err => console.log(err));
+        } else {
+          player.pause();
+          updateUI(false);
+        }
+      }
+
+      function updateUI(isPlaying) {
+        if (isPlaying) {
+          playBtn.textContent = '⏸';
+          vinyl.classList.add('spinning');
+          playerNote.textContent = 'Приятного прослушивания ✨';
+          startParticles(); // Запускаем вылет сердечек и нот
+        } else {
+          playBtn.textContent = '▶';
+          vinyl.classList.remove('spinning');
+          playerNote.textContent = 'Музыка на паузе';
+          stopParticles(); // Останавливаем вылет
+        }
+      }
+
+      // Генератор красивых летающих частиц
+      function createParticle() {
+        if (player.paused) return;
+
+        const symbols = ['🎵', '🎶', '❤️', '✨', '🌸'];
+        const particle = document.createElement('span');
+        particle.classList.add('music-particle');
+        
+        // Выбираем случайный символ
+        particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+        // Генерируем случайное направление разлета (влево, вправо, вверх)
+        const xEnd = (Math.random() * 160 - 80) + 'px'; 
+        const yEnd = -(Math.random() * 100 + 60) + 'px'; 
+        const rotEnd = (Math.random() * 360 - 180) + 'deg';
+
+        particle.style.setProperty('--x-end', xEnd);
+        particle.style.setProperty('--y-end', yEnd);
+        particle.style.setProperty('--rot-end', rotEnd);
+
+        wrapper.appendChild(particle);
+
+        // Удаляем элемент после завершения анимации
+        setTimeout(() => {
+          particle.remove();
+        }, 2500);
+      }
+
+      function startParticles() {
+        if (!particleInterval) {
+          particleInterval = setInterval(createParticle, 600); // Каждые 0.6 сек вылетает новый элемент
+        }
+      }
+
+      function stopParticles() {
+        clearInterval(particleInterval);
+        particleInterval = null;
+      }
+
+      player.addEventListener('timeupdate', () => {
+        if (player.duration) {
+          const percentage = (player.currentTime / player.duration) * 100;
+          progressFill.style.width = percentage + '%';
+        }
+      });
+
+      function seekAudio(event) {
+        if (player.duration) {
+          const rect = progressBar.getBoundingClientRect();
+          const clickX = event.clientX - rect.left;
+          player.currentTime = (clickX / rect.width) * player.duration;
+        }
+      }
+
+      function forceAudioPlay() {
+        player.volume = 0.1;
+        player.play().then(() => {
+          updateUI(true);
+          removeAutoplayListeners();
+        }).catch(err => console.log("Ждем активности..."));
+      }
+
+      function removeAutoplayListeners() {
+        document.removeEventListener('click', forceAudioPlay);
+        document.removeEventListener('scroll', forceAudioPlay);
+        document.removeEventListener('touchstart', forceAudioPlay);
+      }
+
+      document.addEventListener('click', forceAudioPlay);
+      document.addEventListener('scroll', forceAudioPlay);
+      document.addEventListener('touchstart', forceAudioPlay);
+    </script>
+  </div>
+</section>
+
+<div class="ornament">✦ ✿ ✦</div>
 <div class="gallery-grid fade-in">
 	<div class="gallery-item">
 	  <img src="https://i.ibb.co/ZzB9YY21/IMG-7615.jpg" alt="В кафе — наши первые серьёзные разговоры ☕" loading="lazy" />
@@ -942,17 +1193,17 @@
 	  <p class="gallery-caption">Зимние горы — наша первая поездка вместе 🏔</p>
 	</div>
 	<div class="gallery-item">
-	  <img src="https://i.ibb.co/hJSVd8CY/IMG-6201.jpg" alt="Сердце из рук на снегу ❤️" loading="lazy" />
-	  <p class="gallery-caption">Сердце из рук на снегу ❤️</p>
+	  <img src="https://i.ibb.co/skCdFs3/IMG-0157.avif" alt="Сердце из рук на снегу ❤️" loading="lazy" />
+	  <p class="gallery-caption">В театре ❤️</p>
 	  <img src="Сердце из рук на снегу" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto 20px;;">
 	</div>
 	<div class="gallery-item only-phone">
-	  <img src="https://i.ibb.co/zH0n6JwV/IMG-6164.jpg" alt="Предложение" loading="lazy" />
-	  <p class="gallery-caption">Предложение</p>
+	  <img src="https://i.ibb.co/yDmGMX3/IMG-5126.avif" alt="Предложение" loading="lazy" />
+	  <p class="gallery-caption">На концерте</p>
 	</div>
 	<div class="gallery-item">
-	  <img src="https://i.ibb.co/ZRgpnhTS/20260104-140535.jpg" alt="Вместе в горах — там, где мы счастливы 🌄" loading="lazy" />
-	  <p class="gallery-caption">Вместе в горах — там, где мы счастливы 🌄</p>
+	  <img src="https://i.ibb.co/1GMTfBZ5/IMG-7583.jpg" alt="Вместе в горах — там, где мы счастливы 🌄" loading="lazy" />
+	  <p class="gallery-caption">Предложение 🌄</p>
 	</div>
 </div>
 
